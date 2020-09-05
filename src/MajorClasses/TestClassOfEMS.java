@@ -1,4 +1,7 @@
 package MajorClasses;
+import CompositionClasses.PhoneNumber;
+import CompositionClasses.Semester;
+
 import java.util.Scanner;
 
 ////////////////////////////////////
@@ -10,8 +13,12 @@ public class TestClassOfEMS {
 
     public static void main(String[] args) {
 
-        Faculty faculty = new Faculty("Ali Zeb","Kohat","03324534566","alizeb@gmail.com",new Course("Java","CS213","Java9"));
+        Student faculty = new Student("Ali Zeb","Kohat",new PhoneNumber("0","334","2343234"),
+                "alizeb@gmail.com","CS120192060","Undergraduate",new Semester(2,"Fall",2020));
         System.out.println(faculty);
+
+
+
 
 //        Paper[] Paper = new Paper[3];
 //        /*Paper Data which are transfer to Paper Class Constructor, from line no 8-22*/

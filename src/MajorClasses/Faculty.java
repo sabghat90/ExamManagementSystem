@@ -1,10 +1,10 @@
 package MajorClasses;
-
+import CompositionClasses.PhoneNumber;
 
 public class Faculty extends Person {
     private Course courseWithThisInstructor;
 
-    public Faculty(String name, String address, String phoneNumber, String emailAddress, Course courseWithThisInstructor) {
+    public Faculty(String name, String address, PhoneNumber phoneNumber, String emailAddress, Course courseWithThisInstructor) {
         super(name, address, phoneNumber, emailAddress);
         this.courseWithThisInstructor = courseWithThisInstructor;
     }
@@ -28,12 +28,12 @@ public class Faculty extends Person {
     }
 
     @Override
-    public String getPhoneNumber() {
+    public PhoneNumber getPhoneNumber() {
         return super.getPhoneNumber();
     }
 
     @Override
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(PhoneNumber phoneNumber) {
         super.setPhoneNumber(phoneNumber);
     }
 
@@ -46,6 +46,7 @@ public class Faculty extends Person {
     public void setEmailAddress(String emailAddress) {
         super.setEmailAddress(emailAddress);
     }
+
 
     public String toString() {
         return String.format("%s%n%s%n",super.toString(),getCourseWithThisInstructor());

@@ -1,16 +1,18 @@
 package MajorClasses;
 
 
+import CompositionClasses.PhoneNumber;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Person {
     private final String name;
     private String address;
-    private String phoneNumber;
+    private PhoneNumber phoneNumber;
     private String emailAddress;
 
-    public Person(String name, String address, String phoneNumber, String emailAddress) {
+    public Person(String name, String address, PhoneNumber phoneNumber, String emailAddress) {
 
         /* this validation will check whether the name of Person is valid or not
          * like the name will only contains alphabets and start from capital letter */
@@ -21,13 +23,7 @@ public class Person {
 
         this.address = address;
 
-        /* this validation will check whether the phone number is valid or not
-         * like the phone number will only contains the numbers from 0-9 and length will 11
-         * numbers and the number will start from 0 */
-        if (!(phoneNumber.matches("[0-9]+") && phoneNumber.startsWith("0") && phoneNumber.length() == 11))
-            throw new IllegalArgumentException("Invalid Phone Number");
         this.phoneNumber = phoneNumber;
-        // ends phone number validation
 
         /* this validation will check the email address whether the email is valid or not
          * like the email will contains at least one @ and one . */
@@ -53,19 +49,13 @@ public class Person {
         this.address = address;
     }
 
-    public String getPhoneNumber() {
+    public PhoneNumber getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) { // start setPhoneNumber method
-
-        /* this validation will check whether the phone number is valid or not
-         * like the phone number will only contains the numbers from 0-9 and length will 11
-         * numbers and the number will start from 0 */
-        if (!(phoneNumber.matches("[0-9]+") && phoneNumber.startsWith("0") && phoneNumber.length() == 11))
-            throw new IllegalArgumentException("Invalid Phone Number");
+    public void setPhoneNumber(PhoneNumber phoneNumber) {
         this.phoneNumber = phoneNumber;
-    } // end setPhoneNumber method
+    }
 
     public String getEmailAddress() {
         return emailAddress;
@@ -80,7 +70,6 @@ public class Person {
         this.emailAddress = emailAddress;
     } // ends setEmailAddress method
 
-    @Override
     public String toString() {
         return String.format("Name: %s%nAddress: %s%nPhone Number: %s%nEmail Address: %s%n", name, getAddress(),
                 getPhoneNumber(), getEmailAddress());

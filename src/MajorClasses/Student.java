@@ -1,48 +1,53 @@
 package MajorClasses;
+import CompositionClasses.PhoneNumber;
+import CompositionClasses.Semester;
 
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Student {
-    private String stdName;
-    private String stdEmail;
+public class Student extends Person {
+    private String stdRegistrationNumber;
+    private String stdEducationLevel;
+    private Semester stdSemester;
 
-    public static boolean isEmailIsValid (String stdEmail) {
-        String emailRegex = "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$";
-        Pattern emailPattern = Pattern.compile(emailRegex,Pattern.CASE_INSENSITIVE);
-        Matcher matcher = emailPattern.matcher(stdEmail);
-        return matcher.find();
+    public Student(String name, String address, PhoneNumber phoneNumber, String emailAddress,
+                   String stdRegistrationNumber, String stdEducationLevel, Semester stdSemester) {
+        super(name, address, phoneNumber, emailAddress);
+        if (!Pattern.matches("[a-zA-Z]+",stdRegistrationNumber) && stdRegistrationNumber.matches("[0-9]+"))
+            throw new IllegalArgumentException("Registration Number Is Invalid");
+        this.stdRegistrationNumber = stdRegistrationNumber;
+
+        this.stdEducationLevel = stdEducationLevel;
+        this.stdSemester = stdSemester;
     }
 
-    public Student(String stdName, String stdEmail) {
-        this.stdName = stdName;
-        if (!isEmailIsValid(stdEmail))
-            throw new IllegalArgumentException("Invalid Email");
-        this.stdEmail = stdEmail;
-
+    public String getStdRegistrationNumber() {
+        return stdRegistrationNumber;
     }
 
-    public String getStdName() {
-        return stdName;
+    public void setStdRegistrationNumber(String stdRegistrationNumber) {
+        if (!(Pattern.matches("[a-zA-Z1-9]+",stdRegistrationNumber) && stdRegistrationNumber.matches("[0-9]+")))
+            throw new IllegalArgumentException("Registration Number Is Invalid");
+        this.stdRegistrationNumber = stdRegistrationNumber;
     }
 
-    public void setStdName(String stdName) {
-        this.stdName = stdName;
+    public String getStdEducationLevel() {
+        return stdEducationLevel;
     }
 
-    public String getStdEmail() {
-        return stdEmail;
+    public void setStdEducationLevel(String stdEducationLevel) {
+        this.stdEducationLevel = stdEducationLevel;
     }
 
-    public void setStdEmail(String stdEmail) {
-        this.stdEmail = stdEmail;
+    public Semester getStdSemester() {
+        return stdSemester;
     }
 
-    @Override
+    public void setStdSemester(Semester stdSemester) {
+        this.stdSemester = stdSemester;
+    }
+
     public String toString() {
-        return "Student{" +
-                "stdName='" + stdName + '\'' +
-                ", stdEmail='" + stdEmail + '\'' +
-                '}';
+        return String.format("%s%nRegistration Number: %s%nEducation Level: %s%nSemester: %s%n",
+                super.toString(),getStdRegistrationNumber(),getStdEducationLevel(),getStdSemester());
     }
 }
