@@ -71,7 +71,7 @@ public class Person {
     } // ends setEmailAddress method
 
     public String toString() {
-        return String.format("Name: %s%nAddress: %s%nPhone Number: %s%nEmail Address: %s%n", name, getAddress(),
+        return String.format("Name: %s%nAddress: %s%nPhone Number: %s%nEmail Address: %s", name, getAddress(),
                 getPhoneNumber(), getEmailAddress());
     }
 }

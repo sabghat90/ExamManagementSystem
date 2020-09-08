@@ -1,8 +1,7 @@
 package MajorClasses;
 import CompositionClasses.PhoneNumber;
 import CompositionClasses.Semester;
-
-import java.util.Scanner;
+import Students.UndergraduateStudents;
 
 ////////////////////////////////////
 // Sabghat Ullah Khan
@@ -13,12 +12,9 @@ public class TestClassOfEMS {
 
     public static void main(String[] args) {
 
-        Student faculty = new Student("Ali Zeb","Kohat",new PhoneNumber("0","334","2343234"),
-                "alizeb@gmail.com","CS120192060","Undergraduate",new Semester(2,"Fall",2020));
-        System.out.println(faculty);
-
-
-
+        UndergraduateStudents students = new UndergraduateStudents("Ali","Kohat",new PhoneNumber("0","332","7370770"),
+                "alizeb@kust.edu.com","CS1247",new Semester(1,"Fall",2020));
+        System.out.println(students);
 
 //        Paper[] Paper = new Paper[3];
 //        /*Paper Data which are transfer to Paper Class Constructor, from line no 8-22*/
@@ -133,8 +129,8 @@ public class TestClassOfEMS {
 }
 
 
-class ListOfPaper {
-    public String listOfPaper() {
-        return String.format("For Object Oriented Programming and Design: 1%nProgramming Fundamentals: 2%nPrinciples of Management: 3%n");
-    }
-}
+//class ListOfPaper {
+//    public String listOfPaper() {
+//        return String.format("For Object Oriented Programming and Design: 1%nProgramming Fundamentals: 2%nPrinciples of Management: 3%n");
+//    }
+//}

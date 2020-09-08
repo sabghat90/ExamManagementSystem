@@ -9,42 +9,13 @@ public class Faculty extends Person {
         this.courseWithThisInstructor = courseWithThisInstructor;
     }
 
+
     public Course getCourseWithThisInstructor() {
         return courseWithThisInstructor;
     }
 
     public void setCourseWithThisInstructor(Course courseWithThisInstructor) {
         this.courseWithThisInstructor = courseWithThisInstructor;
-    }
-
-    @Override
-    public String getAddress() {
-        return super.getAddress();
-    }
-
-    @Override
-    public void setAddress(String address) {
-        super.setAddress(address);
-    }
-
-    @Override
-    public PhoneNumber getPhoneNumber() {
-        return super.getPhoneNumber();
-    }
-
-    @Override
-    public void setPhoneNumber(PhoneNumber phoneNumber) {
-        super.setPhoneNumber(phoneNumber);
-    }
-
-    @Override
-    public String getEmailAddress() {
-        return super.getEmailAddress();
-    }
-
-    @Override
-    public void setEmailAddress(String emailAddress) {
-        super.setEmailAddress(emailAddress);
     }
 
 

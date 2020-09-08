@@ -1,22 +1,22 @@
-package MajorClasses;
+package Students;
 import CompositionClasses.PhoneNumber;
 import CompositionClasses.Semester;
+import MajorClasses.Person;
 
 import java.util.regex.Pattern;
 
-public class Student extends Person {
+public abstract class Student extends Person {
     private String stdRegistrationNumber;
     private String stdEducationLevel;
     private Semester stdSemester;
 
+
     public Student(String name, String address, PhoneNumber phoneNumber, String emailAddress,
-                   String stdRegistrationNumber, String stdEducationLevel, Semester stdSemester) {
+                   String stdRegistrationNumber, Semester stdSemester) {
         super(name, address, phoneNumber, emailAddress);
         if (!Pattern.matches("[a-zA-Z]+",stdRegistrationNumber) && stdRegistrationNumber.matches("[0-9]+"))
             throw new IllegalArgumentException("Registration Number Is Invalid");
         this.stdRegistrationNumber = stdRegistrationNumber;
-
-        this.stdEducationLevel = stdEducationLevel;
         this.stdSemester = stdSemester;
     }
 
@@ -30,13 +30,7 @@ public class Student extends Person {
         this.stdRegistrationNumber = stdRegistrationNumber;
     }
 
-    public String getStdEducationLevel() {
-        return stdEducationLevel;
-    }
-
-    public void setStdEducationLevel(String stdEducationLevel) {
-        this.stdEducationLevel = stdEducationLevel;
-    }
+    public abstract String getStdEducationLevel(String stdEducationLevel);
 
     public Semester getStdSemester() {
         return stdSemester;
@@ -46,8 +40,9 @@ public class Student extends Person {
         this.stdSemester = stdSemester;
     }
 
+
     public String toString() {
-        return String.format("%s%nRegistration Number: %s%nEducation Level: %s%nSemester: %s%n",
-                super.toString(),getStdRegistrationNumber(),getStdEducationLevel(),getStdSemester());
+        return String.format("%s%nRegistration Number: %s%nSemester: %s",
+                super.toString(),getStdRegistrationNumber(),getStdSemester());
     }
 }
