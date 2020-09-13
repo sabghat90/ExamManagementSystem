@@ -1,9 +1,9 @@
-package MajorClasses;
+package Paper;
 
 import CompositionClasses.Date;
 import CompositionClasses.Time;
 
-public class Paper {
+public abstract class Paper {
     private String paperTitle;
     private String paperID;
     private boolean isScheduled;
@@ -20,7 +20,7 @@ public class Paper {
 //    private int totalMarks;
 
     //Constructor for paper data
-    public Paper(String paperTitle, String paperID) {
+    public Paper(String paperTitle, String paperID, boolean isScheduled) {
         this.paperTitle = paperTitle;
         this.paperID = paperID;
 //        this.courseCode = courseCode;
@@ -35,6 +35,7 @@ public class Paper {
 //        this.numOfStudents = numOfStudents;
         /* this condition will check the exam marks ,
         if the exam is mid the score will assign 30 otherwise for final this will 100*/
+        this.isScheduled = isScheduled;
     }
 
     public String getPaperTitle() {
@@ -60,6 +61,8 @@ public class Paper {
     public void setScheduled(boolean scheduled) {
         isScheduled = scheduled;
     }
+
+    public abstract String getExamType();
 
     public String toString() {
         return String.format("Paper Title: %s%nPaper ID: %s%n",getPaperTitle(),getPaperID());

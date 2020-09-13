@@ -6,8 +6,8 @@ import CompositionClasses.PhoneNumber;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Person {
-    private final String name;
+public abstract class Person {
+    private String name;
     private String address;
     private PhoneNumber phoneNumber;
     private String emailAddress;
@@ -31,6 +31,14 @@ public class Person {
             throw new IllegalArgumentException("Invalid Email Address");
         this.emailAddress = emailAddress;
         // ends email validation
+    }
+
+    public final String getName() {
+        return name;
+    }
+
+    public final void setName(String name) {
+        this.name = name;
     }
 
     /* this is a special boolean method which i made for to check the email validity */
@@ -71,7 +79,7 @@ public class Person {
     } // ends setEmailAddress method
 
     public String toString() {
-        return String.format("Name: %s%nAddress: %s%nPhone Number: %s%nEmail Address: %s", name, getAddress(),
-                getPhoneNumber(), getEmailAddress());
+        return String.format("Name: %s%nAddress: %s%nPhone Number: %s%nEmail Address: %s",
+                name, getAddress(), getPhoneNumber(), getEmailAddress());
     }
 }

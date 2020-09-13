@@ -25,6 +25,8 @@ public class PhoneNumber {
     }
 
     public void setPrefixNumber(String prefixNumber) {
+        if (postfixNumber.equals("0"))
+            throw new IllegalArgumentException("First Digit Must Be Zero");
         this.prefixNumber = prefixNumber;
     }
 
@@ -33,6 +35,8 @@ public class PhoneNumber {
     }
 
     public void setCountryCode(String countryCode) {
+        if (!(countryCode.matches("[0-9]+") && countryCode.length() == 3 ))
+            throw new IllegalArgumentException("Country Code Invalid");
         this.countryCode = countryCode;
     }
 
@@ -41,6 +45,8 @@ public class PhoneNumber {
     }
 
     public void setPostfixNumber(String postfixNumber) {
+        if (!(postfixNumber.matches("[0-9]+") && postfixNumber.length() == 7))
+            throw new IllegalArgumentException("postfix number is invalid");
         this.postfixNumber = postfixNumber;
     }
 

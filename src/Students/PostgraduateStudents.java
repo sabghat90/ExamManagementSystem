@@ -6,9 +6,9 @@ import CompositionClasses.Semester;
 public class PostgraduateStudents extends Student {
     private String stdEducationLevel = "Postgraduate";
 
-    public PostgraduateStudents(String name, String address, PhoneNumber phoneNumber, String emailAddress, String stdRegistrationNumber, Semester stdSemester, String stdEducationLevel) {
+    public PostgraduateStudents(String name, String address, PhoneNumber phoneNumber,
+                                String emailAddress, String stdRegistrationNumber, Semester stdSemester) {
         super(name, address, phoneNumber, emailAddress, stdRegistrationNumber, stdSemester);
-        this.stdEducationLevel = stdEducationLevel;
     }
 
     @Override
@@ -25,7 +25,6 @@ public class PostgraduateStudents extends Student {
     public String getStdEducationLevel(String stdEducationLevel) {
         return stdEducationLevel;
     }
-
 
     @Override
     public Semester getStdSemester() {

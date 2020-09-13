@@ -1,22 +1,12 @@
 package CompositionClasses;
 
 public class Semester {
-    private int stdClass;
     private String semesterSession;
     private int year;
 
-    public Semester(int stdClass, String semesterSession, int year) {
-        this.stdClass = stdClass;
+    public Semester(String semesterSession, int year) {
         this.semesterSession = semesterSession;
         this.year = year;
-    }
-
-    public int getStdClass() {
-        return stdClass;
-    }
-
-    public void setStdClass(int stdClass) {
-        this.stdClass = stdClass;
     }
 
     public String getSemesterSession() {
@@ -36,6 +26,6 @@ public class Semester {
     }
 
     public String toString() {
-        return String.format("%dth %s-%d%n",getStdClass(),getSemesterSession(),getYear());
+        return String.format("%s-%d%n",getSemesterSession(),getYear());
     }
 }

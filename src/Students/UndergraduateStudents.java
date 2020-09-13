@@ -6,8 +6,39 @@ import CompositionClasses.Semester;
 public class UndergraduateStudents extends Student {
     private String stdEducationLevel = "Undergraduate";
 
-    public UndergraduateStudents(String name, String address, PhoneNumber phoneNumber, String emailAddress, String stdRegistrationNumber, Semester stdSemester) {
+    public UndergraduateStudents(String name, String address, PhoneNumber phoneNumber, String emailAddress,
+                                 String stdRegistrationNumber, Semester stdSemester) {
         super(name, address, phoneNumber, emailAddress, stdRegistrationNumber, stdSemester);
+    }
+
+    @Override
+    public String getAddress() {
+        return super.getAddress();
+    }
+
+    @Override
+    public void setAddress(String address) {
+        super.setAddress(address);
+    }
+
+    @Override
+    public PhoneNumber getPhoneNumber() {
+        return super.getPhoneNumber();
+    }
+
+    @Override
+    public void setPhoneNumber(PhoneNumber phoneNumber) {
+        super.setPhoneNumber(phoneNumber);
+    }
+
+    @Override
+    public String getEmailAddress() {
+        return super.getEmailAddress();
+    }
+
+    @Override
+    public void setEmailAddress(String emailAddress) {
+        super.setEmailAddress(emailAddress);
     }
 
     @Override
