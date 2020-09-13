@@ -4,8 +4,8 @@ import CompositionClasses.PhoneNumber;
 public class Faculty extends Person {
     private Course courseWithThisInstructor;
 
-    public Faculty(String name, String address, PhoneNumber phoneNumber, String emailAddress,
-                   Course courseWithThisInstructor) {
+    public Faculty(String name, String address, PhoneNumber phoneNumber,
+                   String emailAddress, Course courseWithThisInstructor) {
         super(name, address, phoneNumber, emailAddress);
         this.courseWithThisInstructor = courseWithThisInstructor;
     }

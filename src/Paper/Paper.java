@@ -1,41 +1,27 @@
 package Paper;
 
-import CompositionClasses.Date;
-import CompositionClasses.Time;
+import java.util.regex.Pattern;
 
 public abstract class Paper {
     private String paperTitle;
     private String paperID;
     private boolean isScheduled;
-//    private String courseCode;
-//    private String courseInCharge;
-//    private String semester;
-//    private String programName;
-//    private Date paperDate;
-//    private Time time;
-//    private String examType;
-//    private String invigilator;
-//    private String location;
-//    private int numOfStudents;
-//    private int totalMarks;
+    private int numOfStudents;
 
     //Constructor for paper data
-    public Paper(String paperTitle, String paperID, boolean isScheduled) {
+    public Paper(String paperTitle, String paperID, boolean isScheduled, int numOfStudents) {
         this.paperTitle = paperTitle;
+
+        /* this will check whether the paper ID is numbers or Characters */
+        if (!Pattern.matches("[0-9]+", paperID))
+            throw new IllegalArgumentException("Invalid Paper ID");
         this.paperID = paperID;
-//        this.courseCode = courseCode;
-//        this.courseInCharge = courseInCharge;
-//        this.semester = semester;
-//        this.programName = programName;
-//        this.paperDate = paperDate;
-//        this.time=time;
-//        this.examType = examType;
-//        this.invigilator = invigilator;
-//        this.location = location;
-//        this.numOfStudents = numOfStudents;
-        /* this condition will check the exam marks ,
-        if the exam is mid the score will assign 30 otherwise for final this will 100*/
+
         this.isScheduled = isScheduled;
+         /* this will check the students number */
+        if (numOfStudents < 0)
+            throw new IllegalArgumentException("Number of Students should not be 0");
+        this.numOfStudents = numOfStudents;
     }
 
     public String getPaperTitle() {
@@ -51,6 +37,9 @@ public abstract class Paper {
     }
 
     public void setPaperID(String paperID) {
+        /* this will check whether the paper ID is numbers or Characters */
+        if (!Pattern.matches("[0-9]+", paperID))
+            throw new IllegalArgumentException("Invalid Paper ID");
         this.paperID = paperID;
     }
 
@@ -62,9 +51,21 @@ public abstract class Paper {
         isScheduled = scheduled;
     }
 
+    public int getNumOfStudents() {
+        return numOfStudents;
+    }
+
+    public void setNumOfStudents(int numOfStudents) {
+        /* this will check the students number */
+        if (numOfStudents < 0)
+            throw new IllegalArgumentException("Number of Students should not be 0");
+        this.numOfStudents = numOfStudents;
+    }
+
     public abstract String getExamType();
 
     public String toString() {
-        return String.format("Paper Title: %s%nPaper ID: %s%n",getPaperTitle(),getPaperID());
+        return String.format("Paper Title: %s%nPaper ID: %s%nNumber of Students: %d%n",
+                getPaperTitle(),getPaperID(),getNumOfStudents());
     }
 }

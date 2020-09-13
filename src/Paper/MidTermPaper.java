@@ -1,10 +1,10 @@
 package Paper;
 
 public class MidTermPaper extends Paper {
-    private String examType = "Mid Term";
+    private final String examType = "Mid Term";
 
-    public MidTermPaper(String paperTitle, String paperID, boolean isScheduled) {
-        super(paperTitle, paperID, isScheduled);
+    public MidTermPaper(String paperTitle, String paperID, boolean isScheduled, int numOfStudents) {
+        super(paperTitle, paperID, isScheduled, numOfStudents);
     }
 
     @Override

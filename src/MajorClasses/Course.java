@@ -1,8 +1,6 @@
 package MajorClasses;
 
 import CompositionClasses.Semester;
-import CompositionClasses.Time;
-import Students.UndergraduateStudents;
 
 import java.util.regex.Pattern;
 
@@ -10,14 +8,12 @@ public class Course {
 
     private final String courseName;
     private String courseCode;
-    private String programName;
-    private Semester courseSemester;
-
     private String associatedBook;
 
     public Course(String courseName, String courseCode, String associatedBook) {
         this.courseName = courseName;
 
+        /* this validation will check whether the course code starts from capital alphabet */
         if (Pattern.matches("[A-Z]+",courseCode))
             throw new IllegalArgumentException("Invalid Course Code");
         this.courseCode = courseCode;
@@ -34,6 +30,7 @@ public class Course {
     }
 
     public void setCourseCode(String courseCode) {
+        /* this validation will check whether the course code starts from capital alphabet */
         if (courseCode.startsWith("CS"))
             throw new IllegalArgumentException("Invalid Course Code");
         this.courseCode = courseCode;

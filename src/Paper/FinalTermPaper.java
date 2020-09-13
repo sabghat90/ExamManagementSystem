@@ -2,10 +2,10 @@ package Paper;
 
 public class FinalTermPaper extends Paper {
     private String paperInvigilator;
-    private String examType = "Final Term";
+    private final String examType = "Final Term";
 
-    public FinalTermPaper(String paperTitle, String paperID, String paperInvigilator, boolean isScheduled) {
-        super(paperTitle, paperID, isScheduled);
+    public FinalTermPaper(String paperTitle, String paperID, String paperInvigilator, boolean isScheduled, int numOfStudents) {
+        super(paperTitle, paperID, isScheduled, numOfStudents);
         this.paperInvigilator = paperInvigilator;
     }
 

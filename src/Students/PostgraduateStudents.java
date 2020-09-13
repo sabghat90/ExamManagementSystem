@@ -4,7 +4,7 @@ import CompositionClasses.PhoneNumber;
 import CompositionClasses.Semester;
 
 public class PostgraduateStudents extends Student {
-    private String stdEducationLevel = "Postgraduate";
+    private final String stdEducationLevel = "Postgraduate";
 
     public PostgraduateStudents(String name, String address, PhoneNumber phoneNumber,
                                 String emailAddress, String stdRegistrationNumber, Semester stdSemester) {

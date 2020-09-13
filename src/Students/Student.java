@@ -7,13 +7,14 @@ import java.util.regex.Pattern;
 
 public abstract class Student extends Person {
     private String stdRegistrationNumber;
-    private String stdEducationLevel;
     private Semester stdSemester;
 
 
     public Student(String name, String address, PhoneNumber phoneNumber, String emailAddress,
                    String stdRegistrationNumber, Semester stdSemester) {
         super(name, address, phoneNumber, emailAddress);
+
+        /* this validation will check the registration number is valid or not */
         if (!Pattern.matches("[a-zA-Z]+",stdRegistrationNumber) && stdRegistrationNumber.matches("[0-9]+"))
             throw new IllegalArgumentException("Registration Number Is Invalid");
         this.stdRegistrationNumber = stdRegistrationNumber;
@@ -25,7 +26,8 @@ public abstract class Student extends Person {
     }
 
     public void setStdRegistrationNumber(String stdRegistrationNumber) {
-        if (!(Pattern.matches("[a-zA-Z1-9]+",stdRegistrationNumber) && stdRegistrationNumber.matches("[0-9]+")))
+        /* this validation will check the registration number is valid or not */
+        if (!Pattern.matches("[a-zA-Z]+",stdRegistrationNumber) && stdRegistrationNumber.matches("[0-9]+"))
             throw new IllegalArgumentException("Registration Number Is Invalid");
         this.stdRegistrationNumber = stdRegistrationNumber;
     }

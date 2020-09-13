@@ -4,10 +4,12 @@ import CompositionClasses.PhoneNumber;
 import CompositionClasses.Semester;
 
 public class UndergraduateStudents extends Student {
-    private String stdEducationLevel = "Undergraduate";
 
-    public UndergraduateStudents(String name, String address, PhoneNumber phoneNumber, String emailAddress,
-                                 String stdRegistrationNumber, Semester stdSemester) {
+    private final String stdEducationLevel = "Undergraduate";
+
+    public UndergraduateStudents(String name, String address, PhoneNumber phoneNumber,
+                                 String emailAddress, String stdRegistrationNumber,
+                                 Semester stdSemester) {
         super(name, address, phoneNumber, emailAddress, stdRegistrationNumber, stdSemester);
     }
 
@@ -67,6 +69,7 @@ public class UndergraduateStudents extends Student {
     }
 
     public String toString() {
-        return String.format("%sDegree Type: %s%n", super.toString(),getStdEducationLevel(stdEducationLevel));
+        return String.format("%sDegree Type: %s%n",
+                super.toString(),getStdEducationLevel(stdEducationLevel));
     }
 }

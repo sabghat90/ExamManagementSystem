@@ -1,12 +1,7 @@
 package MajorClasses;
-import CompositionClasses.Date;
 import CompositionClasses.PhoneNumber;
 import CompositionClasses.Semester;
-import CompositionClasses.Time;
-import Paper.FinalTermPaper;
 import Paper.MidTermPaper;
-import Paper.Paper;
-import Students.PostgraduateStudents;
 import Students.UndergraduateStudents;
 
 import java.util.Scanner;
@@ -19,6 +14,10 @@ import java.util.Scanner;
 public class TestClassOfEMS {
 
     public static void main(String[] args) {
+        /* =================================================================================================== */
+
+        /* =================================================================================================== */
+
         /* =================================================================================================== */
         Faculty[] facultyStaff = new Faculty[3];
         facultyStaff[0] = new Faculty("Ali Zeb","KUST IIT Department",new PhoneNumber("0","123","1234567"),
@@ -33,9 +32,9 @@ public class TestClassOfEMS {
 
         /* =================================================================================================== */
         MidTermPaper[] midTermPaper = new MidTermPaper[3];
-        midTermPaper[0] = new MidTermPaper("Object Oriented Programming","45012",true);
-        midTermPaper[1] = new MidTermPaper("Communication Skills","78541",false);
-        midTermPaper[2] = new MidTermPaper("Discrete Mathematics","45012",true);
+        midTermPaper[0] = new MidTermPaper("Object Oriented Programming","45012",true, 25);
+        midTermPaper[1] = new MidTermPaper("Communication Skills","78541",false, 77);
+        midTermPaper[2] = new MidTermPaper("Discrete Mathematics","45012",true, 56);
         /* =================================================================================================== */
 
         /* =================================================================================================== */
