@@ -32,6 +32,7 @@ public abstract class Student extends Person {
         this.stdRegistrationNumber = stdRegistrationNumber;
     }
 
+    // this is an abstract method of student class
     public abstract String getStdEducationLevel(String stdEducationLevel);
 
     public Semester getStdSemester() {

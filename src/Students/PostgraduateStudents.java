@@ -38,6 +38,7 @@ public class PostgraduateStudents extends Student {
 
     @Override
     public String toString() {
-        return String.format("%sDegree Type: %s%n", super.toString(),getStdEducationLevel(stdEducationLevel));
+        return String.format("%sDegree Type: %s%n",
+                super.toString(),getStdEducationLevel(stdEducationLevel));
     }
 }
